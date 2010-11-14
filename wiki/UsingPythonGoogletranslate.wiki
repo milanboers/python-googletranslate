@@ -6,14 +6,14 @@ This section describes how to use the python-googletranslate class in your proje
 
 
 = Details =
-
 *Include the library into your project*
 
 {{{import python-googletranslate}}}
 
+== Traditional way ==
 *To make a new translation object*
 
-{{{myTranslation = Translation("Text to be translated")}}}
+{{{myTranslation = Translation('Text to be translated or detected')}}}
 
 
 *To detect the language* (returns the language code)
@@ -29,6 +29,19 @@ This section describes how to use the python-googletranslate class in your proje
 *Or combine both*, translating from a detected language to French (returns the translation)
 
 {{{myTranslation.translate('fr')}}}
+
+== Quick way (version >= 0.2) ==
+*To detect the language* (returns the language code)
+
+{{{Translation.dctDetectLanguage('Text to be detected')}}}
+
+*To translate from English to French* (returns the translation)
+
+{{{Translation.dctTranslate('Text to be translated','en','fr')}}}
+
+*Or combine both*, translating from a detected language to French (returns the translation)
+
+{{{myTranslation.translate('Text to be translated','fr')}}}
 
 ----
 
