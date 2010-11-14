@@ -1,0 +1,38 @@
+#summary How to use python-googletranslate in your software project
+
+= Introduction =
+
+This section describes how to use the python-googletranslate class in your project.
+
+
+= Details =
+
+*Include the library into your project*
+
+import python-googletranslate
+
+*To make a new translation object*
+
+myTranslation = Translation("Text to be translated")
+
+
+*To detect the language* (returns the language code)
+
+myTranslation.detectLanguage()
+
+
+*To translate from English to French* (returns the translation)
+
+myTranslation.translate('en','fr')
+
+
+*Or combine both*, translating from a detected language to French (returns the translation)
+
+myTranslation.translate('fr')
+
+
+For a complete list of the language codes see http://code.google.com/apis/language/translate/v2/using_rest.html#language-params
+
+ValueError exception is raised when one of the parameters is wrong
+
+IOError exception is raised when the connection to Google could not be made
